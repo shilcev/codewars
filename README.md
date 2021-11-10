@@ -7,3 +7,11 @@ Find a place as close to exit as possible
 All chairs must be occupied before the first person will be served
 
 So it looks like this for 10 chairs and 10 patients
+
+
+
+solution
+
+func lastChair(_ n: Int) -> Int {
+  return n-1
+}
