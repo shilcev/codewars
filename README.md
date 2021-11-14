@@ -1,3 +1,6 @@
+SWIFT version
+
+
 
 ++++++++++++++++++++
 There's a waiting room with N chairs set in single row. Chairs are consecutively numbered from 1 to N. First is closest to the entrance (which is exit as well).
@@ -25,3 +28,20 @@ Write a function, persistence, that takes in a positive parameter num and return
 
 
 solution 
+
+
+func persistence(for num: Int) -> Int {
+   let i = 0
+  var vam = [""]
+  // while String(num).count != 1 {
+     vam = String(num).components(separatedBy: [""])//.reduce((a,b)=>a*b);
+   //  i += 1
+ //  }
+ //  return i
+  
+  
+  return 0 
+}
+
+
+++++++++++++++++++++++
