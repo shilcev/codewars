@@ -31,16 +31,13 @@ solution
 
 
 func persistence(for num: Int) -> Int {
-   let i = 0
-  var vam = [""]
-  // while String(num).count != 1 {
-     vam = String(num).components(separatedBy: [""])//.reduce((a,b)=>a*b);
-   //  i += 1
- //  }
- //  return i
-  
-  
-  return 0 
+   var i = 0
+  var vam = num
+   while String(vam).count != 1 {
+     vam = String(num).map { String($0) }.compactMap { Int($0) }.reduce( $1, *)
+     i += 1
+   }
+   return i
 }
 
 
