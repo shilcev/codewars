@@ -1,4 +1,8 @@
+
+
+
 SWIFT version
+
 
 
 
@@ -42,3 +46,9 @@ func persistence(for num: Int) -> Int {
 
 
 ++++++++++++++++++++++
+
+
+
+<!-- HTML -->
+<img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
+
