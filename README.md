@@ -33,15 +33,12 @@ solution
 func persistence(for num: Int) -> Int {
    var i = 0
   var vam = num
-   while String(vam).count != 1 {
-     vam = String(num).map { String($0) }.compactMap { Int($0) }.reduce( $1, *)
+ while String(vam).count != 1 {
+     vam = String(vam).map { String($0) }.compactMap { Int($0) }.reduce( 1, *)
      i += 1
-   }
+   }  
    return i
 }
 
-
-
-IN PROGRESSS
 
 ++++++++++++++++++++++
