@@ -57,22 +57,22 @@ func wave(_ y: String) -> [String] {
   var temp: [String] = []
   var t = 0
   if y.isEmpty {
-    print(y)
     return []
   }
   for _ in 1...y.count {
     t += 1
     temp = y.map { String($0) }
-    temp[t-1] = temp[t-1].uppercased()
+    if temp[t-1] != " " {
+   temp[t-1] = temp[t-1].uppercased()
+      } else {
+      continue
+    }
     result.append(temp.joined(separator: ""))
   }
-  print(result)
   return result
 }
 
 
-
-in process
 ++++++++++++++++++++++
 
 
