@@ -53,17 +53,22 @@ The result is a wave of standing spectators that travels through the crowd, even
 In this simple Kata your task is to create a function that turns a string into a Mexican Wave. You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up. 
 
 func wave(_ y: String) -> [String] {
-  var e = y.count
  var result: [String] = []
-  var o = 0
-  for i in 0...e {
-    
-    result.append(y)
+  var temp: [String] = []
+  var t = 0
+  if y.isEmpty {
+    print(y)
+    return []
   }
-  
+  for _ in 1...y.count {
+    t += 1
+    temp = y.map { String($0) }
+    temp[t-1] = temp[t-1].uppercased()
+    result.append(temp.joined(separator: ""))
+  }
+  print(result)
   return result
 }
-
 
 
 
