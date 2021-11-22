@@ -76,6 +76,55 @@ func wave(_ y: String) -> [String] {
 ++++++++++++++++++++++
 
 
+Your job is to change the given string s using a non-negative integer n.
+
+Each bit in n will specify whether or not to swap the case for each alphabetic character in s: if the bit is 1, swap the case; if its 0, leave it as is. When you finish with the last bit of n, start again with the first bit.
+
+You should skip the checking of bits when a non-alphabetic character is encountered, but they should be preserved in their original positions.
+
+
+func swap(_ s: String,_ n: Int) -> String {
+ let str = Array(String(n, radix: 2))
+  let arr = Array(s)
+  var array: [Any] = []
+  var n = 0
+  for i in arr {
+    if n < str.count {
+   if str[n] == "1" {
+     if i.isUppercase == false {
+   array.append(String(i).uppercased())
+       }
+     if i.isUppercase == true {
+       array.append(String(i).lowercased())
+     }
+   } else if str[n] == "0" {
+   array.append(i)
+   }
+    } else {
+       if str[n-1] == "1" {
+  if i.isUppercase == false {
+   array.append(String(i).uppercased())
+       }
+     if i.isUppercase == true {
+       array.append(String(i).lowercased())
+     }
+   } else if str[n-1] == "0" {
+   array.append(i)
+   }
+      n -= str.count+1
+    }
+    n += 1
+  }
+ let string = array.compactMap { String(describing: $0) }
+  let astring = string.joined(separator: "")
+  print(str)
+return astring
+}
+
+IN PROGRESSS
++++++++++++++++++++++++++
+
+
 
 <!-- HTML -->
 <img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
