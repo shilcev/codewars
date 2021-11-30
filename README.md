@@ -17,21 +17,18 @@ How much money would I have at the end of my financing plan on planet XY140Z-n?
 
 
 func finance(_ n: UInt64) -> UInt64 {
-  var z = 0
-     for i in 0...n+1 {
-    //   z += 2*Int(i) - (Int(n)+1+Int(i))
-       for e in 2*Int(i)...(Int(n)+1+Int(i)) {
-         z += e
-         print(z)
-         }
-     //  print((Int(n)+1+Int(i)))
-      // z+= sum(range(2*x,n+1+x))
-       }
-  
-  return UInt64(z)
+   var x = 0 
+  var r = 0
+  var nn = n
+ 	while nn > 0 {
+ 		for i in 0...nn {
+ 			r += x + Int(i)
+ 		}
+ 		x += 2
+ 		nn -= 1
+ 	}
+ 	return UInt64(r+x)
 }
-
-IN PROGRESSS
 
 +++++++++++++++++++++++++++
 The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. It's easy to see that the sum of the perimeters of these squares is : 4 * (1 + 1 + 2 + 3 + 5 + 8) = 4 * 20 = 80
