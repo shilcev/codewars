@@ -3,7 +3,35 @@
 
 SWIFT version
 
+++++++++++++++++++++++++++
 
+I need to save some money to buy a gift. I think I can do something like that:
+
+First week (W0) I save nothing on Sunday, 1 on Monday, 2 on Tuesday... 6 on Saturday, second week (W1) 2 on Monday... 7 on Saturday and so on according to the table below where the days are numbered from 0 to 6.
+
+Can you tell me how much I will have for my gift on Saturday evening after I have saved 12? (Your function finance(6) should return 168 which is the sum of the savings in the table).
+
+Imagine now that we live on planet XY140Z-n where the days of the week are numbered from 0 to n (integer n > 0) and where I save from week number 0 to week number n included (in the table below n = 6).
+
+How much money would I have at the end of my financing plan on planet XY140Z-n?
+
+
+func finance(_ n: UInt64) -> UInt64 {
+  var z = 0
+     for i in 0...n+1 {
+    //   z += 2*Int(i) - (Int(n)+1+Int(i))
+       for e in 2*Int(i)...(Int(n)+1+Int(i)) {
+         z += e
+         print(z)
+         }
+     //  print((Int(n)+1+Int(i)))
+      // z+= sum(range(2*x,n+1+x))
+       }
+  
+  return UInt64(z)
+}
+
+IN PROGRESSS
 
 +++++++++++++++++++++++++++
 The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. It's easy to see that the sum of the perimeters of these squares is : 4 * (1 + 1 + 2 + 3 + 5 + 8) = 4 * 20 = 80
