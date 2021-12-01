@@ -20,16 +20,17 @@ func finance(_ n: UInt64) -> UInt64 {
    var x = 0 
   var r = 0
   var nn = n
- 	while nn > 0 {
+ 	repeat { 
  		for i in 0...nn {
  			r += x + Int(i)
  		}
  		x += 2
  		nn -= 1
- 	}
- 	return UInt64(r+x)
+    print(r+x)
+ 	} while nn > 0 && (r+x)-1 <= Int64.max
+  print(r+x)
+  return UInt64(r+x)
 }
-
 +++++++++++++++++++++++++++
 The drawing shows 6 squares the sides of which have a length of 1, 1, 2, 3, 5, 8. It's easy to see that the sum of the perimeters of these squares is : 4 * (1 + 1 + 2 + 3 + 5 + 8) = 4 * 20 = 80
 
