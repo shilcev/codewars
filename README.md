@@ -2,6 +2,24 @@
 
 
 SWIFT version
+
++++++++++++++++++++++++++++
+
+Your task is to find the next higher number (int) with same '1'- Bits.
+
+I.e. as much 1 bits as before and output next higher than input. Input is always an int in between 1 and 1<<30 (inclusive). No bad cases or special tricks...
+
+
+
+
+func nextHigher(_ n: Int) -> Int {
+  var o = n + 1
+  while Array(String(o, radix: 2)).map { ($0 == "1") }.filter{$0 == true}.count != Array(String(n, radix: 2)).map { ($0 == "1") }.filter{$0 == true}.count {
+    o += 1
+  }
+  return o
+}
+
 ++++++++++++++++++++++++++
 
 
