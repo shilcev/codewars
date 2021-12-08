@@ -22,18 +22,20 @@ Task
 Given an integer n (n > 1) the function cycle(n) returns the length of the cycle if there is one otherwise (n and 10 not coprimes) return -1.
 
 func cycle(_ n: Int) -> Int {
-    if n % 2 == 0 || n % 5 == 0 { 
-        return -1
-      }
-  var i = 0
-  var val = 1
-  while (i += 1) {
-    i += 1
-    val = val * 10 % n
-    print(val)
-    if val == 1 { return i}
-  }
-    return i
+  var length = 1
+	var r = 1
+	for i in 1...n {
+		r = (10 * r) % n
+		switch r {
+		case 0:
+			return -1
+		case 1:
+			return length
+		default:
+			length += 1
+		}
+	}
+	return -1
 }
 
 
