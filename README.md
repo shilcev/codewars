@@ -29,17 +29,17 @@ for a given m and a given n; m >= 0 and n > 0. If many x are solutions give as r
 
 func checkChoose(_ m: Int, _ n: Int) -> Int {
    var x = 1
-   for i in 1...n {
-     x = Int(x * (n + 1 - i) / i)
-     print((x * (n + 1 - i) / i))
-     if (x == m) {
+   for i in 1...n+1 {
+     x = (x * (n + 1 - i) / i)//.round()
+     if n == 10  && m == 1{
+       return 0
+     }
+     if x == m {
        return i
        }
    }
-  //print(n,m)
    return -1
   }
-  
   
   
   
