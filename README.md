@@ -2,6 +2,32 @@
 
 
 SWIFT version
+
+
++++++++++++++++++++++++++++
+
+
+
+The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+
+
+
+
+func duplicateEncode(_ word: String) -> String {
+var result: [String] = []
+  let counts = Array(word.lowercased()).reduce(into: [:]) { counts, word in counts[word, default: 0] += 1 }
+  for i in Array(word.lowercased()){
+   if counts[i] != nil && counts[i]! > 1 {
+     result.append(")")
+   } else {
+     result.append("(")
+   }
+}
+  return result.joined(separator:"")
+}
+
+
 +++++++++++++++++++++++++++
 
 Some numbers have funny properties. For example:
