@@ -30,7 +30,22 @@ In Shell bash a1 and a2 are strings. The return is a string where words are sepa
 Beware: r must be without duplicates.
 
 
+func inArray(_ a1: [String], _ a2: [String]) -> [String] {
+  var result: [String] = []
+  print(a1,a2)
+ for i in a1 {
+      for j in a2 { 
+        if i.contains(j) {
+          result += ["\(i)"]
+   // result.append(i)
+}
+    }
+  } 
+//  print(result)
+print(Set(result.sorted()))
+  return Array(Set(result.sorted()))
 
+}
 
 INPROGRESSSS
 
