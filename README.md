@@ -32,23 +32,21 @@ Beware: r must be without duplicates.
 
 func inArray(_ a1: [String], _ a2: [String]) -> [String] {
   var result: [String] = []
-  print(a1,a2)
- for i in a1 {
-      for j in a2 { 
+ for i in a2 {
+      for j in a1 { 
         if i.contains(j) {
-          result += ["\(i)"]
-   // result.append(i)
+          if result.contains(j){
+            continue
+          } else {
+          result += ["\(j)"]
+            }
 }
     }
   } 
-//  print(result)
-print(Set(result.sorted()))
-  return Array(Set(result.sorted()))
+  result.sort()
+  return result
 
 }
-
-INPROGRESSSS
-
 
 
 +++++++++++++++++++++++++++
