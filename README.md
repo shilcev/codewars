@@ -5,6 +5,46 @@ SWIFT version
 +++++++++++++++++++++++++++
 
 
+
+The walker
+
+The walker starts from point O, walks along OA, AB and BC. When he is in C (C will be in the upper half-plane), what is the distance CO? What is the angle tOC in positive degrees, minutes, seconds?
+
+Angle tOA is alpha (here 45 degrees), angle hAB is beta (here 30 degrees), angle uBC is gamma(here 60 degrees).
+
+Task
+
+function solve(a, b, c, alpha, beta, gamma) with parameters
+
+a, b, c: positive integers in units of distance (stand for OA, AB, BC)
+alpha, beta, gamma: positive integers in degrees (positive angles are anticlockwise)
+returns an array:
+
+first element: distance CO (rounded to the nearest integer)
+then angle tOC with the third following elements:
+second element of the array: number of degrees in angle tOC (truncated positive integer)
+third element of the array: number of minutes in angle tOC (truncated positive integer)
+fourth element of the array: number of seconds in angle tOC (truncated positive integer)
+
+
+
+
+
+
+func solve(_ a: Int, _ b: Int, _ c: Int, _ alpha: Int, _ beta: Int, _ gamma: Int) -> [Int] {
+   let x = Double(a) * cos(Double(alpha) * .pi / 180) - Double(b) * sin(Double(beta) * .pi / 180) - Double(c) * cos(Double(gamma) * .pi / 180)
+  let y = Double(a) * sin(Double(alpha) * .pi / 180) + Double(b) * cos(Double(beta) * .pi / 180) - Double(c) * sin(Double(gamma) * .pi / 180)
+    let oc = Int(round(sqrt(pow(x,2) + pow(y,2))))
+       let angle = .pi / 2 + atan(-x / y)
+         let totalSeconds = Int(angle * 360 * 60 * 60 / (2 * .pi))
+         let seconds = totalSeconds % 60
+         let minutes = (totalSeconds / 60) % 60
+         let degrees = totalSeconds / (60 * 60)
+  return [oc,degrees,minutes,seconds]
+}
++++++++++++++++++++++++++++
+
+
 Given two arrays of strings a1 and a2 return a sorted array r in lexicographical order of the strings of a1 which are substrings of strings of a2.
 
 Example 1:
