@@ -2,6 +2,44 @@
 
 
 SWIFT version
++++++++++++++++++++++++++++
+
+
+Once upon a time, on a way through the old wild mountainous west,…
+
+… a man was given directions to go from one point to another. The directions were "NORTH", "SOUTH", "WEST", "EAST". Clearly "NORTH" and "SOUTH" are opposite, "WEST" and "EAST" too.
+
+Going to one direction and coming back the opposite direction right away is a needless effort. Since this is the wild west, with dreadfull weather and not much water, it's important to save yourself some energy, otherwise you might die of thirst!
+
+How I crossed a mountainous desert the smart way.
+
+The directions given to the man are, for example, the following (depending on the language):
+
+
+
+
+func dirReduc(_ arr: [String]) -> [String] {
+  var counts: [String: Int] = [:]
+  var result: [String] = []
+for item in arr {
+    counts[item] = (counts[item] ?? 0) + 1
+} 
+  if counts["WEST"]! > counts["EAST"]! {
+   result += Array(repeating: "WEST", count: counts["WEST"]!-counts["EAST"]!)
+  } else {
+      result += Array(repeating: "EAST", count: counts["EAST"]!-counts["WEST"]!)
+  }
+ if counts["NORTH"]! > counts["SOUTH"]! {
+   result += Array(repeating: "NORTH", count: counts["NORTH"]!-counts["SOUTH"]!)
+  } else {
+      result += Array(repeating: "SOUTH", count: counts["SOUTH"]!-counts["NORTH"]!)
+  }
+ if counts["NORTH"]! == counts["SOUTH"]! && counts["WEST"]! == counts["EAST"]! {
+    result += ["NORTH", "WEST", "SOUTH", "EAST"]
+  }
+  print(result)
+  return result
+}
 
 +++++++++++++++++++++++++++
 
