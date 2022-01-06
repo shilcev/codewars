@@ -16,30 +16,21 @@ How I crossed a mountainous desert the smart way.
 The directions given to the man are, for example, the following (depending on the language):
 
 
-
-
 func dirReduc(_ arr: [String]) -> [String] {
-  var counts: [String: Int] = [:]
-  var result: [String] = []
-for item in arr {
-    counts[item] = (counts[item] ?? 0) + 1
-} 
-  if counts["WEST"]! > counts["EAST"]! {
-   result += Array(repeating: "WEST", count: counts["WEST"]!-counts["EAST"]!)
-  } else {
-      result += Array(repeating: "EAST", count: counts["EAST"]!-counts["WEST"]!)
-  }
- if counts["NORTH"]! > counts["SOUTH"]! {
-   result += Array(repeating: "NORTH", count: counts["NORTH"]!-counts["SOUTH"]!)
-  } else {
-      result += Array(repeating: "SOUTH", count: counts["SOUTH"]!-counts["NORTH"]!)
-  }
- if counts["NORTH"]! == counts["SOUTH"]! && counts["WEST"]! == counts["EAST"]! {
-    result += ["NORTH", "WEST", "SOUTH", "EAST"]
-  }
-  print(result)
-  return result
-}
+  let directions = ["NORTH": 1, "SOUTH" : -1, "WEST": 2, "EAST": -2]
+  var index = 1
+  var arr2 = arr
+    while index < arr2.count {
+        if directions[arr2[index]]! + directions[arr2[index-1]]! == 0 { 
+      arr2.remove(at: index)
+      arr2.remove(at: index-1)
+            if index > 1 { 
+              index -= 1 
+            }
+          } else { index += 1 }
+          
+      }
+    return arr2
 
 +++++++++++++++++++++++++++
 
