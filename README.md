@@ -2,6 +2,61 @@
 
 
 SWIFT version
+
+
+
+Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits. For example:
+
+12 ==> 21
+513 ==> 531
+2017 ==> 2071
+nextBigger(num: 12)   // returns 21
+nextBigger(num: 513)  // returns 531
+nextBigger(num: 2017) // returns 2071
+If the digits can't be rearranged to form a bigger number, return -1 (or nil in Swift):
+
+9 ==> -1
+111 ==> -1
+531 ==> -1
+nextBigger(num: 9)   // returns nil
+nextBigger(num: 111) // returns nil
+nextBigger(num: 531) // returns nil
+
+
+
+
+
+func nextBigger(num: Int) -> Int? {
+ var result: [Int] = []
+ // var arr = String(num).compactMap{ $0.wholeNumberValue } 
+  //var arr2 = Array(String(num).compactMap{ $0.wholeNumberValue } .reversed())
+  for _ in 0...100 { //arr.count {
+/*  var element = arr.remove(at: arr.count-1)
+    arr.insert(element, at:0)
+    //var element2 = arr.remove(at: arr.count-2)
+    //arr.insert(element2, at:0)
+    result.append(arr.reduce(0, { $0 * 10 + $1 }))
+     var element2 = arr2.remove(at: arr.count-1)
+    arr2.insert(element2, at:0)
+    result.append(arr2.reduce(0, { $0 * 10 + $1 })) */
+    let jopa = String(num).compactMap{ $0.wholeNumberValue }.shuffled()
+  result.append(jopa.reduce(0, { $0 * 10 + $1 }))
+  }
+
+ // print(Array(result.reversed()), result)
+ // print(result.sorted().firstIndex(of: num))  
+ // print(Array(Set(result)).sorted())
+  //print(Array(Set(result)).sorted().firstIndex(of: num)!)
+ // print(Array(Set(result)).sorted()[Array(Set(result)).sorted().firstIndex(of: num)!+1])
+ // print(Array(Set(result)).sorted().firstIndex(of: num)!+1, Array(Set(result)).sorted().count)
+  if Array(Set(result)).sorted().firstIndex(of: num)!+1 >= Array(Set(result)).sorted().count {
+    return nil
+  }
+  if Array(Set(result)).sorted().firstIndex(of: num)!+1 < Array(Set(result)).sorted().count {
+    return Array(Set(result)).sorted()[Array(Set(result)).sorted().firstIndex(of: num)!+1]
+  }
+  return nil
+}
 +++++++++++++++++++++++++++
 
 
