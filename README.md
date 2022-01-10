@@ -2,6 +2,35 @@
 
 
 SWIFT version
+++++++++++++++++++++++++++++++++++
+
+
+Consider the function
+
+f: x -> sqrt(1 + x) - 1 at x = 1e-15.
+
+We get: f(x) = 4.44089209850062616e-16
+
+or something around that, depending on the language.
+
+This function involves the subtraction of a pair of similar numbers when x is near 0 and the results are significantly erroneous in this region. Using pow instead of sqrt doesn't give better results.
+
+A "good" answer is 4.99999999999999875... * 1e-16.
+
+Can you modify f(x) to give a good approximation of f(x) in the neighborhood of 0?
+
+Note:
+
+Don't round or truncate your results. See the testing function in Sample Tests:.
+
+
+
+
+
+
+func f(_ x: Double) -> Double {
+  return x / 2.0 - pow(x, 2.0) / 8.0 + pow(x, 3.0) / 16.0 - 5.0 * pow(x, 4.0) / 128.0 + 7.0 * pow(x, 5.0) / 256.0
+}
 
 
 
