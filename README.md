@@ -2,6 +2,36 @@
 
 
 SWIFT version
+
+
+++++++++++++++++++++++++++++++++++
+
+
+
+The rgb function is incomplete. Complete it so that passing in RGB decimal values will result in a hexadecimal representation being returned. Valid decimal values for RGB are 0 - 255. Any values that fall out of that range must be rounded to the closest valid value.
+
+Note: Your answer should always be 6 characters long, the shorthand with 3 will not work here.
+
+func rgb(_ r: Int, _ g: Int, _ b: Int) -> String {
+  var rC = r
+  var gC = g
+  var bC = b
+  if r < 0 { rC = 0 } 
+  if r > 255 { rC = 255 }
+   if g < 0 { gC = 0 } 
+  if g > 255 { gC = 255 }
+   if b < 0 { bC = 0 } 
+  if b > 255 { bC = 255 }
+      if (0 ... 255 ~= rC) && (0 ... 255 ~= gC) && (0 ... 255 ~= bC) {
+        var result = String(((1 << 24) + (rC << 16) + (gC << 8) + bC), radix: 16)
+        result.remove(at: result.startIndex)
+       return(result.uppercased())
+  }
+  return ""
+}
+
+
+
 ++++++++++++++++++++++++++++++++++
 
 
