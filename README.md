@@ -41,7 +41,15 @@ Unfortunately, this series converges too slowly to be useful, as it takes over 3
 
 
 
-
+func iterPi(_ epsilon: Double) -> (Int, String) {
+  var pi = 1.0
+    var count = 1
+  while Double(abs(Double.pi - 4.0 * pi)) > epsilon {
+   count += 1
+    pi += (count % 2 == 0 ? -1.0 : 1.0)/(2.0 * Double(count) - 1.0)
+    }
+ return(count, String(format: "%.10f",  (40e9 * pi) / 10e9))
+}
 
 
 
