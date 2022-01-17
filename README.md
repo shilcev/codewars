@@ -4,6 +4,26 @@
 SWIFT version
 
 
+++++++++++++++++++++++++++++++
+
+
+
+
+How much bigger is a 16-inch pizza compared to an 8-inch pizza? A more pragmatic question is: How many 8-inch pizzas "fit" in a 16-incher?
+
+The answer, as it turns out, is exactly four 8-inch pizzas. For sizes that don't correspond to a round number of 8-inchers, you must round the number of slices (one 8-inch pizza = 8 slices), e.g.:
+
+
+
+func howManyPizzas(_ n: Int) -> String {
+  let s8 = Double.pi*64.0
+  let s = Double.pi*Double(pow(Double(n), 2))
+  let pizzas = Int(s/s8)
+  let slices = Int(round((s/s8 - Double(pizzas))*8))
+   return n >= 8 ? "pizzas: \(pizzas), slices: \(slices)":"pizzas: \(pizzas), slices: \(Int(round(s/s8 * 8)))"
+}
+
+
 
 
 
