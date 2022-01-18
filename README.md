@@ -20,7 +20,14 @@ Find the unique number (this kata)
 Find the unique string
 Find The Unique
 
-
+func findUniq(_ arr: [Double]) -> Double {
+  var a = arr.sorted()
+  if a[0] == a[1] {
+   return a[a.count-1]
+  } else {
+    return a[0]
+  }
+}
 
 
 
