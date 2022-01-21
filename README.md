@@ -21,7 +21,35 @@ You will be given a stocklist (e.g. : L) and a list of categories in capital let
 
 
 
+func stockList(_ listOfArt: [String], _ listOfCat: [String]) -> String {
+ // var count = 0
+  var result = ""
+  var letter = ""
+   for i in listOfCat {
+result += "("+i+" : "
+     var total = 0
+        for q in listOfArt {
+          letter = q
+        //  print(q)
+if i.prefix(1) == q.prefix(1){
+  //  var num = letter.removeAll(where: { "0123456789".contains($0) } )
+ var num = letter.replacingOccurrences(of:"[1-9]",with: "")
+ 
+  print(num)
+         //  totalLibros += Integer.parseInt(numeroLibros);
+}
+          
+       //   print(currentLetter, currentArt)
+        }
+     result += "\(total)" + ")"
+          }
+ // print(result)
+   return ""
+}
 
+
+
+NOT READYYYYYYY
 
 
 
