@@ -22,31 +22,30 @@ You will be given a stocklist (e.g. : L) and a list of categories in capital let
 
 
 func stockList(_ listOfArt: [String], _ listOfCat: [String]) -> String {
- // var count = 0
   var result = ""
   var letter = ""
+  var count = 0
    for i in listOfCat {
+     count += 1
 result += "("+i+" : "
      var total = 0
         for q in listOfArt {
           letter = q
-        //  print(q)
 if i.prefix(1) == q.prefix(1){
-  //  var num = letter.removeAll(where: { "0123456789".contains($0) } )
- var num = letter.replacingOccurrences(of:"[1-9]",with: "")
- 
-  print(num)
-         //  totalLibros += Integer.parseInt(numeroLibros);
-}
-          
-       //   print(currentLetter, currentArt)
-        }
+  let num = letter.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789.").inverted)
+  total += Int(num) ?? 0
+    }
+ }
      result += "\(total)" + ")"
-          }
- // print(result)
-   return ""
+  if count < listOfCat.count {
+   result += " - " 
+  }
 }
-
+  if listOfCat.count == 0 || Int(result.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789.").inverted)) == 0 { 
+    return ""
+    }
+   return result
+}
 
 
 NOT READYYYYYYY
