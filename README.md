@@ -20,11 +20,11 @@ L = ["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"] or ....
 You will be given a stocklist (e.g. : L) and a list of categories in capital letters e.g :
 
 
-
 func stockList(_ listOfArt: [String], _ listOfCat: [String]) -> String {
   var result = ""
   var letter = ""
   var count = 0
+  print(listOfArt, listOfCat)
    for i in listOfCat {
      count += 1
 result += "("+i+" : "
@@ -32,8 +32,9 @@ result += "("+i+" : "
         for q in listOfArt {
           letter = q
 if i.prefix(1) == q.prefix(1){
-  let num = letter.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789.").inverted)
-  total += Int(num) ?? 0
+  let num = letter.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789.").inverted).filter {!$0.isWhitespace}
+ total += Int(num.trimmingCharacters(in: .whitespacesAndNewlines)) ?? 0
+  print(num)
     }
  }
      result += "\(total)" + ")"
@@ -41,14 +42,11 @@ if i.prefix(1) == q.prefix(1){
    result += " - " 
   }
 }
-  if listOfCat.count == 0 || Int(result.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789.").inverted)) == 0 { 
+  if listOfArt.count == 0 || listOfCat.count == 0 || Int(result.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789.").inverted)) == 0 { 
     return ""
     }
    return result
 }
-
-
-NOT READYYYYYYY
 
 
 
