@@ -1,4 +1,6 @@
 
+<!-- HTML -->
+<img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
 
 
 SWIFT version
@@ -1299,7 +1301,6 @@ func swap(_ s: String,_ n: Int) -> String {
 return astring
 }
 
-IN PROGRESSS
 +++++++++++++++++++++++++
 
 
