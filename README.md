@@ -4,6 +4,54 @@
 
 
 SWIFT version
+
+
+
+
+++++++++++++++++++++++++++++++
+A traveling salesman has to visit clients. He got each client's address e.g. "432 Main Long Road St. Louisville OH 43071" as a list.
+
+The basic zipcode format usually consists of two capital letters followed by a white space and five digits. The list of clients to visit was given as a string of all addresses, each separated from the others by a comma, e.g. :
+
+"123 Main Street St. Louisville OH 43071,432 Main Long Road St. Louisville OH 43071,786 High Street Pollocksville NY 56432".
+
+To ease his travel he wants to group the list by zipcode.
+
+Task
+
+The function travel will take two parameters r (addresses' list of all clients' as a string) and zipcode and returns a string in the following format:
+
+zipcode:street and town,street and town,.../house number,house number,...
+
+The street numbers must be in the same order as the streets where they belong.
+
+If a given zipcode doesn't exist in the list of clients' addresses return "zipcode:/"
+
+
+
+
+
+func travel(_ r: String, zipcode: String) -> String {
+  let array = r.components(separatedBy: ",")
+  var result = ""
+  var nums = ""
+  for e in array {
+      let num = e.replacingOccurrences(of: zipcode, with: "")
+   let parsed = e.replacingOccurrences(of: zipcode, with: "").components(separatedBy: CharacterSet.decimalDigits).joined()
+ if e.contains(zipcode.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789.").inverted)) && e.split(separator: " ").contains("\(zipcode.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789.").inverted))") {
+   if result.isEmpty {
+    result += zipcode+":"
+  }
+  result += parsed.trimmingCharacters(in: .whitespacesAndNewlines)
+   result += ","
+nums += num.filter("0123456789".contains) + ","
+ } 
+}
+  if result.isEmpty {
+    return zipcode + ":/"
+  }
+  return result.dropLast() + "/" + nums.dropLast()
+}
 ++++++++++++++++++++++++++++++
 
 
