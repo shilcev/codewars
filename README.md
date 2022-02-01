@@ -5,6 +5,35 @@
 
 SWIFT version
 
+
+++++++++++++++++++++++++++++++
+
+
+
+You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+
+
+func findOutlier(_ array: [Int]) -> Int {
+  var odd: [Int] = []
+  var even: [Int] = []
+  for i in array {
+    if i % 2 == 0 {
+   even.append(i)
+  } else {
+   odd.append(i)
+  }
+  }
+var myString = ""
+  if even.count < odd.count { 
+_ = even.map{ myString = myString + "\($0)" }
+    } else  {
+    _ = odd.map{ myString = myString + "\($0)" }
+  }
+  return Int(myString)!
+}
+
+
+
 ++++++++++++++++++++++++++++++
 
 
