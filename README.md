@@ -19,7 +19,7 @@ An array of random weights is linked to the firstnames and each som is multiplie
 
 
 
-
+IN PROGRESSSS
 ++++++++++++++++++++++++++++++
 A traveling salesman has to visit clients. He got each client's address e.g. "432 Main Long Road St. Louisville OH 43071" as a list.
 
