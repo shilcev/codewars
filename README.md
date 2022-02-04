@@ -9,6 +9,41 @@ SWIFT version
 ++++++++++++++++++++++++++++++
 
 
+
+Abbreviate the numbers that are passed in into a smaller format.
+
+The idea is that if the number 1,260 is passed in, you would return 1.3k.
+
+Only condense the numbers if they are 1,000 or larger. The highest the will be passed in will be in the 1,000,000,000,000 (1 trillion) range. The smallest will be negative 1 trillion.
+
+Use the following letters to represent your numbers.
+
+'k' for thousand
+'m' for million
+'b' for billion
+'t' for trillion
+The numbers go to the tenth decimal place and they need to be rounded.
+
+Exampls:
+
+-124 should return -124
+
+103,456 should return 103.5k
+
+56,783,040,185 should return 56.8b
+
+1,000 should return 1.0k
+
+
+
+
+
+IN PROGREESSS
+
+
+++++++++++++++++++++++++++++++
+
+
 Consider the sequence S(n, z) = (1 - z)(z + z**2 + z**3 + ... + z**n) where z is a complex number and n a positive integer (n > 0).
 
 When n goes to infinity and z has a correct value (ie z is in its domain of convergence D), S(n, z) goes to a finite limit lim depending on z.
