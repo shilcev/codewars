@@ -36,6 +36,20 @@ Exampls:
 
 
 
+    let number = Double(num)
+    let thousand = number / 1000
+    let million = number / 1000000
+    let billion = number / 1000000000
+    print(num, billion)
+    if billion >= 1.0 {
+        return String(format: "%.1f", ((billion*10)/10))+"b"//"\((billion*10)/10)B"
+    } else if million >= 1.0 {
+        return String(format: "%.1f", ((million*10)/10))+"m"//"\((million*10)/10)M"
+    } else if thousand >= 1.0 {
+        return String(format: "%.1f", ((thousand*10/10)))+"k" //("\((thousand*10/10))K")
+    } else {
+        return "\(Int(number))"
+    }
 
 
 IN PROGREESSS
