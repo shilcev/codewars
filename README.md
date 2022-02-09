@@ -22,7 +22,31 @@ When you divide the successive powers of 10 by 13 you get the following remainde
 
 
 
-
+var p = n
+  let w = [1, 10, 9, 12, 3, 4]
+   var sum = 0
+   var old_sum = 1
+  var j = 1
+  var r = p
+  //  while sum != old_sum {
+    //    old_sum = sum
+      //  sum = 0
+        for x in String(n).reversed() {
+     sum += (r % 10) * w[j % 6]
+          //  sum += remainders[(counter - 1) % 6] * int(str(n)[-counter])
+            j += 1
+          print(x)
+          }
+     //   p = sum
+          
+   //   }
+ // print(sum)
+    return sum
+    
+    
+    
+    
+    IN PROGRESSS
 
 
 
