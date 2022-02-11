@@ -1,14 +1,9 @@
+<h1>Codewars<a href="https://gph.is/st/mqqDGdx"><img src="https://git.io/JMd4a" height="44" align="right"></a></h1>
 
 <!-- HTML -->
 <img src="https://readme-jokes.vercel.app/api" alt="Jokes Card" />
 
-<h1>Codewars<a href="https://gph.is/st/mqqDGdx"><img src="https://git.io/JMd4a" height="44" align="right"></a></h1>
-
 <div align="left">
-  <img src="https://img.shields.io/github/repo-size/asahiocean/Codewars.svg">
-  <img src="https://img.shields.io/github/commit-activity/y/asahiocean/Codewars">
-  <img src="https://img.shields.io/github/last-commit/asahiocean/Codewars">
-  <img src="https://tinyurl.com/4z43xxx8">
   <a href="https://codewars.com/users/shiltsev"><img src="https://codewars.com/users/shiltsev/badges/micro" align="right"></img></a>
 </div>
 
