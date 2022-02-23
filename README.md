@@ -11,7 +11,21 @@
 ++++++++++++++++++++++++++++++
 Return the century of the input year. The input will always be a 4 digit string, so there is no need for validation.
 
-
+func whatCentury(_ year: String) -> String {
+var result = ""
+ let yearInt = Int(ceil(Double(Int(year)!)/Double(100)))
+  switch yearInt {
+  case 1,21,31,41,51,61,71,81,91:
+    result+="\(yearInt)st"
+case 2,22,32,42,52,62,72,82,92:
+    result+="\(yearInt)nd"
+    case 3,23,33,43,53,63,73,83,93:
+    result+="\(yearInt)rd"
+default: 
+    result+="\(yearInt)th"
+}
+  return result
+}
 
 
 
