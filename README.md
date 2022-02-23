@@ -9,6 +9,13 @@
 
 
 ++++++++++++++++++++++++++++++
+Return the century of the input year. The input will always be a 4 digit string, so there is no need for validation.
+
+
+
+
+
++++++++++++++++++++++++++++++++
 
 
 Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer. You don't need to validate the form of the Roman numeral.
