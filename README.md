@@ -6,8 +6,18 @@
 <div align="left">
   <a href="https://codewars.com/users/shiltsev"><img src="https://codewars.com/users/shiltsev/badges/micro" align="right"></img></a>
 </div>
+++++++++++++++++++++++++++++++
+Given a 2D ( nested ) list ( array, vector, .. ) of size m * n, your task is to find the sum of the minimum values in each row.
 
 
+
+func sumOfMinimums(_ numbers: [[Int]]) -> Int {
+  var sum = 0
+  for i in numbers {
+    sum += i.reduce(Int.max, { min($0, $1) })
+  }
+  return sum
+  }
 +++++++++++++++++++
 Return the century of the input year. The input will always be a 4 digit string, so there is no need for validation.
 
