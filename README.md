@@ -6,6 +6,15 @@
 <div align="left">
   <a href="https://codewars.com/users/shiltsev"><img src="https://codewars.com/users/shiltsev/badges/micro" align="right"></img></a>
 </div>
+
+
+
+
+
+
+
+
+
 ++++++++++++++++++++++++++++++
 Given a 2D ( nested ) list ( array, vector, .. ) of size m * n, your task is to find the sum of the minimum values in each row.
 
